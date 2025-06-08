@@ -1,0 +1,36 @@
+# ... added section ...
+version: '3.8'
+services:
+  web:
+    image: php:8.2-apache
+    volumes:
+      - ./html:/var/www/html
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password # Changez ceci pour un mot de passe sécurisé
+      MYSQL_DATABASE: catalogue
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password # Changez ceci pour un mot de passe sécurisé
+      # Aucun port n'est nécessaire pour exposer MySQL à l'extérieur sauf si besoin spécifique.
+      # Si vous souhaitez accéder à MySQL depuis l'extérieur, utilisez :
+      # ports:
+      #   - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root_password # Utilisez le même mot de passe root que pour le service db
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+volumes:
+  db_data:
+# ... end added section ...

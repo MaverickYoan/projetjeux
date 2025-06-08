@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game Catalog</title>
+    <style>
+        /* Basic styling for demonstration */
+        body { font-family: sans-serif; }
+        .game-list { margin-top: 20px; }
+        .game-item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .game-item h3 { margin-top: 0; }
+    </style>
+</head>
+<body>
+    <h1>Video Game Catalog</h1>
+
+    <p><a href="admin_dashboard.php">Dashboard</a></p>
+
+    <p><a href="add_game.php">Add New Game</a></p>
+
+    <div class="game-list">
+        <h2>Available Games</h2>
+        <!-- This section will be populated dynamically with game data -->
+        <div class="game-item">
+            <img src="placeholder.jpg" alt="Game Image" style="width: 100px; height: auto; float: left; margin-right: 15px;"> <!-- Placeholder for image -->
+            <h3>Game Title 1</h3>
+            <p>Genre: Action</p>
+            <p>Platform: PC</p>
+            <button>Remove</button> <!-- Placeholder for remove action -->
+            <div style="clear: both;"></div> <!-- Clear float -->
+        </div>
+        <div class="game-item">
+             <img src="placeholder.jpg" alt="Game Image" style="width: 100px; height: auto; float: left; margin-right: 15px;"> <!-- Placeholder for image -->
+            <h3>Game Title 2</h3>
+            <p>Genre: RPG</p>
+            <p>Platform: PlayStation</p>
+            <button>Remove</button> <!-- Placeholder for remove action -->
+             <div style="clear: both;"></div> <!-- Clear float -->
+        </div>
+        <!-- More game items will be listed here -->
+    </div>    <!-- This is a basic structure. Dynamic content and server-side logic are needed for full functionality. -->
+</body>
+</html>
