@@ -1,3 +1,38 @@
+<?php
+// Check if the form was submitted using the POST method
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $title = $_POST['title'] ?? ''; // Use ?? '' to handle cases where a field might be missing
+    $genre = $_POST['genre'] ?? '';
+    $platform = $_POST['platform'] ?? '';
+    $image_url = $_POST['image_url'] ?? '';
+    $description = $_POST['description'] ?? '';
+    $release_date = $_POST['release_date'] ?? '';
+    $developer = $_POST['developer'] ?? '';
+
+    // --- This is where you would typically add code to: ---
+    // 1. Validate the data (e.g., check if title is not empty)
+    // 2. Sanitize the data to prevent security issues (like SQL injection)
+    // 3. Connect to your database
+    // 4. Insert the game data into a table
+    // 5. Handle success or failure (e.g., redirect to a success page or show an error)
+    // -------------------------------------------------------
+
+    // For demonstration purposes, let's just print the received data
+    echo "<h2>Received Game Data:</h2>";
+    echo "<p><strong>Title:</strong> " . htmlspecialchars($title) . "</p>";
+    echo "<p><strong>Genre:</strong> " . htmlspecialchars($genre) . "</p>";
+    echo "<p><strong>Platform:</strong> " . htmlspecialchars($platform) . "</p>";
+    echo "<p><strong>Image URL:</strong> " . htmlspecialchars($image_url) . "</p>";
+    echo "<p><strong>Description:</strong> " . htmlspecialchars($description) . "</p>";
+    echo "<p><strong>Release Date:</strong> " . htmlspecialchars($release_date) . "</p>";
+    echo "<p><strong>Developer:</strong> " . htmlspecialchars($developer) . "</p>";
+
+    // In a real application, you might redirect the user after successful submission:
+    // header("Location: index.php");
+    // exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +47,7 @@
         input[type="text"], textarea { width: 100%; padding: 8px; box-sizing: border-box; }
         button { padding: 10px 15px; }
 
-        body { 
+        body {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
@@ -40,8 +75,7 @@
             0% { opacity: 0.6; }
             50% { opacity: 1; }
             100% { opacity: 0.6; }
-        }
-        h1 { text-align: center; color: white; }
+        }        h1 { text-align: center; color: white; }
         p { text-align: center; }
         a { color: lightblue; }
         form {
@@ -107,6 +141,10 @@
         <div>
             <label for="developer">Developer:</label>
             <input type="text" id="developer" name="developer">
+        </div>
+        <div>
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" id="rating" name="rating" min="1" max="5">
         </div>
         <button type="submit">Add Game</button>
     </form>    <!-- This is a basic structure. Server-side logic is needed to process the form submission. -->
