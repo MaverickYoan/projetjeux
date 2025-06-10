@@ -1,34 +1,34 @@
 <?php
-// Check if the form was submitted using the POST method
+// Vérifiez si le formulaire a été soumis à l'aide de la méthode POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
-    $title = $_POST['title'] ?? ''; // Use ?? '' to handle cases where a field might be missing
+    $title = $_POST['title'] ?? ''; // Utilisez ?? '' pour gérer les cas où un champ pourrait être manquant
     $genre = $_POST['genre'] ?? '';
-    $platform = $_POST['platform'] ?? '';
+    $platforme = $_POST['platforme'] ?? '';
     $image_url = $_POST['image_url'] ?? '';
     $description = $_POST['description'] ?? '';
     $release_date = $_POST['release_date'] ?? '';
     $developer = $_POST['developer'] ?? '';
 
-    // --- This is where you would typically add code to: ---
-    // 1. Validate the data (e.g., check if title is not empty)
-    // 2. Sanitize the data to prevent security issues (like SQL injection)
-    // 3. Connect to your database
-    // 4. Insert the game data into a table
-    // 5. Handle success or failure (e.g., redirect to a success page or show an error)
+    // --- C'est ici que vous ajouteriez généralement du code : --- 
+    // 1. Valider les données (par exemple, vérifier si le titre n'est pas vide) 
+    // 2. Nettoyer les données pour éviter les problèmes de sécurité (comme l'injection SQL) 
+    // 3. Se connecter à votre base de données 
+    // 4. Insérer les données du jeu dans une table 
+    // 5. Gérer le succès ou l'échec (par exemple, rediriger vers une page de réussite ou afficher une erreur)
     // -------------------------------------------------------
 
-    // For demonstration purposes, let's just print the received data
+    // À des fins de démonstration, imprimons simplement les données reçues
     echo "<h2>Received Game Data:</h2>";
     echo "<p><strong>Title:</strong> " . htmlspecialchars($title) . "</p>";
     echo "<p><strong>Genre:</strong> " . htmlspecialchars($genre) . "</p>";
-    echo "<p><strong>Platform:</strong> " . htmlspecialchars($platform) . "</p>";
+    echo "<p><strong>Platforme:</strong> " . htmlspecialchars($platforme) . "</p>";
     echo "<p><strong>Image URL:</strong> " . htmlspecialchars($image_url) . "</p>";
     echo "<p><strong>Description:</strong> " . htmlspecialchars($description) . "</p>";
     echo "<p><strong>Release Date:</strong> " . htmlspecialchars($release_date) . "</p>";
     echo "<p><strong>Developer:</strong> " . htmlspecialchars($developer) . "</p>";
 
-    // In a real application, you might redirect the user after successful submission:
+    // Dans une application réelle, vous pouvez rediriger l'utilisateur après une soumission réussie :
     // header("Location: index.php");
     // exit();
 }
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         button:hover { background-color: #4cae4c; }
     </style>
 </head>
-<body><!-- Animated Stars Background -->
+<body><!-- Background animé d'étoiles -->
     <div class="stars"></div>
     <h1>Add New Game to Catalog</h1>
 
@@ -124,33 +124,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="genre" name="genre">
         </div>
         <div>
-            <label for="platform">Platform:</label>
-            <input type="text" id="platform" name="platform">
+            <label for="platforme">Platforme:</label>
+            <input type="text" id="platforme" name="platforme">
         </div>
         <div>
             <label for="image_url">Image URL:</label>
             <input type="text" id="image_url" name="image_url">
         </div>
         <div>
-            <label for="description">Description:</label>            <textarea id="description" name="description" rows="4"></textarea>
+            <label for="description">Description:</label>            
+            <textarea id="description" name="description" rows="4"></textarea>
         </div>
         <div>
-            <label for="release_date">Release Date:</label>
+            <label for="release_date">Date:</label>
             <input type="date" id="release_date" name="release_date">
         </div>
-        <div>
+        <!-- <div>
             <label for="developer">Developer:</label>
             <input type="text" id="developer" name="developer">
-        </div>
+        </div> -->
         <div>
-            <label for="rating">Rating (1-5):</label>
+            <label for="rating">Note (1-5):</label>
             <input type="number" id="rating" name="rating" min="1" max="5">
         </div>
-        <button type="submit">Add Game</button>
-    </form>    <!-- This is a basic structure. Server-side logic is needed to process the form submission. -->
+        <button type="submit">Ajouter jeu</button>
+    </form>    
+    <!-- Il s'agit d'une structure de base. 
+    Une logique côté serveur est nécessaire pour traiter la soumission du formulaire. -->
 
     <script>
-        // JavaScript for creating animated stars
+        // JavaScript pour créer des étoiles animées
         const starsContainer = document.querySelector('.stars');
         const numberOfStars = 50;
 

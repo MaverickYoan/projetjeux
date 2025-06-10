@@ -1,3 +1,33 @@
+<?php
+require_once "connect.php";
+
+// * Assure PDO connection is established
+// Example: $db = new PDO('mysql:host=localhost;dbname=catalogue;charset=utf8', 'username', 'password');
+// If connect.php already sets $db, this is not needed.
+
+
+// * sql CREATE
+// $sql = "CREATE DATABASE catalogue";
+
+// * sql SELECT
+$sql = "SELECT * FROM catalogue";
+
+// * préparation de la requête sql
+$query = $db->prepare($sql);
+
+// * exécution de la requête sql
+$query->execute();
+
+// * récupération des données de la requête sql
+$catalogue = $query->fetchAll(PDO::FETCH_ASSOC);
+
+// * afficher la table catalogue
+// print_r($catalogue);
+
+
+require "disconnect.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -726,7 +756,7 @@
 
     <p><a href="admin_dashboard.php">Dashboard</a></p>
     <p><a href="wink.php">Wink</a></p>
-
+    <p><a href="http://localhost:8080/index.php?route=/sql&pos=0&db=catalogue&table=jeux">SQL Table Jeux</a></p>
     <p><a href="add_game.php">Add New Game</a></p>
 
     <div class="game-list">
@@ -736,7 +766,7 @@
             <img src="placeholder.jpg" alt="Game Image" style="width: 100px; height: auto; float: left; margin-right: 15px;"> <!-- Placeholder for image -->
             <h3>Game Title 1</h3>
             <p>Genre: Action</p>
-            <p>Platform: PC</p>
+            <p>Platforme: PC</p>
             <button>Remove</button> <!-- Placeholder for remove action -->
             <div style="clear: both;"></div> <!-- Clear float -->
         </div>
@@ -744,7 +774,7 @@
              <img src="placeholder.jpg" alt="Game Image" style="width: 100px; height: auto; float: left; margin-right: 15px;"> <!-- Placeholder for image -->
             <h3>Game Title 2</h3>
             <p>Genre: RPG</p>
-            <p>Platform: PlayStation</p>
+            <p>Platforme: PlayStation</p>
             <button>Remove</button> <!-- Placeholder for remove action -->
              <div style="clear: both;"></div> <!-- Clear float -->
         </div>

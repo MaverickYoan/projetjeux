@@ -3,7 +3,9 @@
     <p><a href="index.php">Retour au catalogue</a></p>
     <p><a href="add_game.php">Add New Game</a></p>
     <p><a href="add_editeur.php">Ajouter un éditeur</a></p>
-    <p><a href="utilisateurs/liste.php">Gérer les utilisateurs</a></p>
+    <p><a href="liste.php">Gérer les utilisateurs</a></p>
+    <p><a href="http://localhost:8080/index.php?route=/sql&pos=0&db=catalogue&table=jeux">SQL Table Jeux</a></p>
+
 <?php include '../includes/navbar.php'; ?>
 <div class="container-fluid">
     <div class="row">
