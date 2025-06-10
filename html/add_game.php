@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             height: 100vh;
             overflow: hidden; /* Hide scrollbars */
-            background: linear-gradient(to bottom, #3498db, #8e44ad); /* Gradient background */
+            background: linear-gradient(to bottom,rgb(52, 219, 66), #8e44ad); /* Gradient background */
             color: white;
         }
         /* Animated background stars */
