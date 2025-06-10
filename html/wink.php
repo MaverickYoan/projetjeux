@@ -731,10 +731,10 @@
             <h1>wink</h1>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="http://localhost:8000/wink.php#Accueil/wink.php">Accueil</a></li>
-                <li><a href="http://localhost:8000/wink.php/wink.php#À propos/wink.php">À propos</a></li>
-                <li><a href="http://localhost:8000/wink.php/#catalog/">Catalogue</a></li>
-                <li><a href="http://localhost:8000/wink.php#images/wink.php">Images</a></li>
+                <li><a href="http://localhost/wink.php">Accueil</a></li>
+                <li><a href="http://localhost/wink.php#about">À propos</a></li>
+                <li><a href="http://localhost/wink.php#catalog/">Catalogue</a></li>
+                <li><a href="http://localhost/wink.php#images/wink.php">Images</a></li>
                 <li><button data-page="admin" aria-label="Administration">Administration</button></li>
                 <li><button data-page="contact" aria-label="Contact">Contact</button></li>
                 <li><button data-page="projet" aria-label="Projet">Projet</button></li>
@@ -744,7 +744,8 @@
 
     <main>
         <section id="home" class="active" aria-label="Accueil">
-            <h2>Bienvenue sur wink</h2> <img src="img/levelUp.jpeg" width="80%" alt="levelUp">
+            <h2>Bienvenue sur wink</h2> 
+            <img src="levelUp.jpeg" width="80%" alt="levelUp">
         </section>
 
         <section id="about" aria-label="À propos">

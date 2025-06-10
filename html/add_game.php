@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Game</title>
+    <title>Ajouter jeu</title>
     <style>
         /* Basic styling for demonstration */
         body { font-family: sans-serif; }
@@ -110,13 +110,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body><!-- Background animé d'étoiles -->
     <div class="stars"></div>
-    <h1>Add New Game to Catalog</h1>
-
-    <p><a href="index.php">Back to Catalog</a></p>
+    <h1>Ajouter un nouveau jeu au catalogue</h1>
+    <p><a href="http://192.168.63.40:5500/html/jeux.html">Liste de jeux</a></p>
+    <p><a href="index.php">Retour au catalogue</a></p>
 
     <form action="/add-game" method="POST">
         <div>
-            <label for="title">Title:</label>
+            <label for="title">Titre:</label>
             <input type="text" id="title" name="title" required>
         </div>
         <div>
